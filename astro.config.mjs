@@ -23,6 +23,7 @@ export default defineConfig({
           autogenerate: { directory: 'cybersecurity' },
         },
       ],
+      customCss: ['./src/assets/landing.css'],
     }),
   ],
 });

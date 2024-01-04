@@ -1,54 +1,46 @@
-# Starlight Starter Kit: Basics
+# Zaphkiel Workshop
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Welcome to Zaphkiel Workshop, your personal space for rich and varied documentation on technology, web development, network administration, cybersecurity and much more. This site is built with Astro and the Starlight Starter Kit, offering a fluid and intuitive user experience.
 
-```
-npm create astro@latest -- --template starlight
-```
+## 🌟 About Zaphkiel Workshop
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+Zaphkiel Workshop is a space where I share tutorials, tips, and how-to guides in various areas of technology. From programming to system administration, this site is designed to document and share my knowledge and discoveries.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Project Made with Starlight
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Zaphkiel Workshop, crafted using the Starlight toolkit with Astro, is structured as follows:
 
 ```
 .
 ├── public/
 ├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   └── env.d.ts
+│ ├── assets/
+│ ├── content/
+│ │ ├── docs/
+│ │ └── config.ts
+│ └── env.d.ts
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+In Zaphkiel Workshop, `.md` and `.mdx` files located in `src/content/docs/` are crucial. Each file becomes a route accessible via its filename.
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+For visual content, add your images to `src/assets/` and embed them in Markdown using relative links.
 
-Static assets, like favicons, can be placed in the `public/` directory.
+Place static assets like favicons in the `public/` folder.
 
-## 🧞 Commands
+### Essential Commands
 
-All commands are run from the root of the project, from a terminal:
+Execute these commands from the project's root directory in your terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command           | Action                              |
+| :---------------- | :---------------------------------- |
+| `npm install`     | Installs dependencies               |
+| `npm run dev`     | Starts the local development server |
+| `npm run build`   | Builds your production site         |
+| `npm run preview` | Previews your build locally         |
 
-## 👀 Want to learn more?
+## 👩‍💻 Learn More
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+For a deeper understanding of how Starlight integrates with Astro, check out the [Starlight documentation](https://starlight.astro.build/) and the [Astro documentation](https://docs.astro.build).

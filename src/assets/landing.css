@@ -1,0 +1,130 @@
+:root {
+  --accent-hsl: 20, 71%, 44%;
+  --overlay-borange: hsla(var(--accent-hsl), 0.2);
+  --overlay-orange: #d0a6337b 20%;
+  --sl-color-text-accent: #c63434;
+  --sl-color-text-accent-darker: #d31a1a;
+  --color-bg-elevation: hsl(224, 10%, 13%);
+}
+
+:root[data-theme='light'] {
+  --accent-hsl: 10, 85%, 65%;
+  --overlay-borange: hsla(var(--accent-hsl), 0.3);
+  --overlay-orange: #e18835c0 20%;
+  --sl-color-text-accent: #d12424;
+  --sl-color-text-accent-darker: #b01919;
+  --color-bg-elevation: hsl(0, 0%, 93%);
+}
+
+[data-has-hero] .page {
+  background: radial-gradient(
+      var(--overlay-orange),
+      var(--overlay-borange),
+      transparent 65%
+    )
+    no-repeat 40rem -15rem / 140rem 80rem;
+}
+
+[data-has-hero] header {
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+[data-has-hero] header site-search > button {
+  display: none !important;
+}
+
+[data-has-hero] {
+  overflow-x: hidden;
+}
+
+[data-has-hero] .hero > div.sl-flex {
+  align-self: flex-start;
+}
+
+[data-has-hero] .hero .action {
+  border-radius: 24px;
+  transition: background-color ease-in-out 0.25s;
+}
+
+[data-has-hero] .hero .action.primary {
+  color: #fefefe;
+  font-weight: bold;
+}
+
+[data-has-hero] .hero .action.primary:hover {
+  background: var(--sl-color-text-accent-darker);
+}
+
+[data-has-hero] .hero .action.minimal {
+  border: solid 1px var(--sl-color-text-accent);
+  padding: 1rem 1.25rem;
+}
+
+[data-has-hero] .hero .action.minimal:hover {
+  background: var(--sl-color-text-accent);
+  color: #fefefe;
+}
+
+[data-has-hero] .hero .actions {
+  gap: 1.25rem;
+}
+
+[data-has-hero] .hero .hero-gradient-text {
+  background: radial-gradient(
+      circle at top left,
+      hsl(34, 100%, 50%) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at center, rgb(233, 113, 113) 0%, transparent 100%),
+    radial-gradient(circle at bottom right, rgb(255, 0, 0) 0%, transparent 50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-has-hero] .card {
+  border-radius: 12px;
+  position: relative;
+  background: radial-gradient(
+      300px circle at top left,
+      rgba(85, 44, 190, 0.081) 20%,
+      transparent 100%
+    ),
+    radial-gradient(
+      300px circle at bottom right,
+      rgba(44, 102, 190, 0.09) 20%,
+      transparent 100%
+    );
+}
+
+[data-has-hero] .card::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  transition: opacity 400ms ease 0s;
+  will-change: background, opacity;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(62, 85, 167, 0.212),
+    transparent 40%
+  );
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+[data-has-hero] .card:hover::before {
+  opacity: 1;
+}
+
+[data-has-hero] .star-text {
+  margin-top: 8px !important;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: wider;
+}

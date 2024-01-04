@@ -3,9 +3,38 @@ title: Securing NGINX with Cloudflare
 description: How to secure NGINX with Cloudflare & IPTables
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
+# Securing NGINX with Cloudflare and IPTables
 
-## Further reading
+When it comes to securing an NGINX web server, using Cloudflare in conjunction with IPTables offers an added layer of security. Cloudflare acts as a reverse proxy, offering benefits like DDoS protection and reduced latency, while IPTables is a powerful tool for traffic filtering. Together, they can greatly enhance the security of your server.
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+## Why Use Cloudflare with IPTables?
+
+**Cloudflare** not only provides protection against DDoS attacks but also hides your server's real IP address, making it less vulnerable. By using **IPTables**, you set up a rule that allows traffic only from Cloudflare's IP addresses, thereby preventing unwanted traffic.
+
+## How to Set It Up?
+
+### Step 1: Block All HTTP/HTTPS Traffic
+
+Start by blocking all incoming traffic on HTTP (80) and HTTPS (443) ports:
+
+```bash
+iptables -A INPUT -p tcp --dport http -j DROP
+iptables -A INPUT -p tcp --dport https -j DROP
+```
+
+These commands block direct traffic to your server on the standard web ports.
+
+### Step 2: Allow Traffic from Cloudflare's IP Addresses
+
+Next, allow traffic only from Cloudflare's IP addresses. Use the following commands to permit HTTP and HTTPS traffic:
+
+```bash
+for i in `curl https://www.cloudflare.com/ips-v4`; do iptables -I INPUT -p tcp -s $i --dport http -j ACCEPT; done
+for i in `curl https://www.cloudflare.com/ips-v4`; do iptables -I INPUT -p tcp -s $i --dport https -j ACCEPT; done
+```
+
+These commands add rules to accept incoming traffic on HTTP and HTTPS ports only from Cloudflare's IP addresses.
+
+### Conclusion
+
+By following these steps, you enhance your NGINX server's security by allowing only Cloudflare to communicate with your server. This reduces the risk of direct attacks and leverages Cloudflare's performance and security benefits.
